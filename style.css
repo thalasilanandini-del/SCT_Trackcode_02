@@ -1,0 +1,356 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body */
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #263c54,
+            transparent 35%
+        ),
+        #101522;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px 15px;
+}
+
+
+/* Main container */
+
+.container {
+    width: 100%;
+
+    max-width: 650px;
+
+    text-align: center;
+}
+
+
+/* Header */
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    padding: 0 5px;
+}
+
+.logo {
+    font-size: 28px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #27c7b8;
+}
+
+.header p {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: #94a3b8;
+}
+
+
+/* Stopwatch card */
+
+.stopwatch-card {
+    background: rgba(30, 41, 59, 0.95);
+
+    border: 1px solid #334155;
+
+    border-radius: 25px;
+
+    padding: 40px 35px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Status */
+
+.status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: #172033;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    color: #aab8cc;
+
+    margin-bottom: 25px;
+}
+
+.status-dot {
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #64748b;
+}
+
+
+/* Time display */
+
+#display {
+    font-size: clamp(35px, 8vw, 65px);
+
+    letter-spacing: 2px;
+
+    font-variant-numeric: tabular-nums;
+
+    color: #ffffff;
+
+    margin-bottom: 15px;
+}
+
+.time-label {
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: #64748b;
+
+    margin-bottom: 35px;
+}
+
+
+/* Controls */
+
+.controls {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 40px;
+}
+
+.btn {
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.start-btn {
+    background: #27c7b8;
+
+    color: #101522;
+}
+
+.pause-btn {
+    background: #f4b942;
+
+    color: #101522;
+}
+
+.reset-btn {
+    background: #334155;
+
+    color: white;
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+
+    filter: brightness(1.1);
+}
+
+.btn:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+/* Lap section */
+
+.laps-section {
+    text-align: left;
+
+    border-top: 1px solid #334155;
+
+    padding-top: 25px;
+}
+
+.laps-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.laps-header h2 {
+    font-size: 20px;
+}
+
+.lap-btn {
+    background: transparent;
+
+    border: 1px solid #27c7b8;
+
+    color: #27c7b8;
+
+    border-radius: 20px;
+
+    padding: 8px 18px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.lap-btn:hover:not(:disabled) {
+    background: #27c7b8;
+
+    color: #101522;
+}
+
+.lap-btn:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+/* Lap list */
+
+.laps-container {
+    max-height: 230px;
+
+    overflow-y: auto;
+}
+
+.empty-message {
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    padding: 25px 0;
+}
+
+.lap-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 14px 15px;
+
+    background: #172033;
+
+    border-radius: 10px;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+}
+
+.lap-number {
+    color: #94a3b8;
+}
+
+.lap-time {
+    color: #ffffff;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* Footer */
+
+footer {
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-top: 25px;
+}
+
+
+/* Mobile responsive */
+
+@media (max-width: 500px) {
+
+    .stopwatch-card {
+        padding: 30px 18px;
+    }
+
+    .header {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .controls {
+        gap: 8px;
+    }
+
+    .btn {
+        padding: 12px 18px;
+
+        font-size: 13px;
+    }
+
+    #display {
+        letter-spacing: 0;
+    }
+
+}

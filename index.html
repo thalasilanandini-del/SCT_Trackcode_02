@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Chrono - Stopwatch</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <div class="logo">
+                <span>⏱</span>
+                Chrono
+            </div>
+
+            <p>STOPWATCH</p>
+
+        </header>
+
+
+        <!-- Main Stopwatch -->
+
+        <main class="stopwatch-card">
+
+            <div class="status">
+                <span class="status-dot"></span>
+                <span id="statusText">Ready to start</span>
+            </div>
+
+
+            <h1 id="display">
+                00:00:00.00
+            </h1>
+
+            <p class="time-label">
+                HOURS : MINUTES : SECONDS : CENTISECONDS
+            </p>
+
+
+            <!-- Control Buttons -->
+
+            <div class="controls">
+
+                <button
+                    id="startBtn"
+                    class="btn start-btn">
+
+                    ▶ Start
+
+                </button>
+
+                <button
+                    id="pauseBtn"
+                    class="btn pause-btn"
+                    disabled>
+
+                    ❚❚ Pause
+
+                </button>
+
+                <button
+                    id="resetBtn"
+                    class="btn reset-btn">
+
+                    ↺ Reset
+
+                </button>
+
+            </div>
+
+
+            <!-- Lap Section -->
+
+            <section class="laps-section">
+
+                <div class="laps-header">
+
+                    <h2>Lap Times</h2>
+
+                    <button
+                        id="lapBtn"
+                        class="lap-btn"
+                        disabled>
+
+                        + Lap
+
+                    </button>
+
+                </div>
+
+
+                <div id="lapsContainer"
+                     class="laps-container">
+
+                    <p class="empty-message">
+                        Your lap times will appear here.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+            Internship Task 02 • Stopwatch Web Application
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
